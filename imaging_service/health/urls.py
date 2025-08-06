@@ -1,3 +1,7 @@
-from health.routers import router
+from django.urls import path
+from imaging_service.health.views import HealthView
 
-urlpatterns = router.urls
+
+urlpatterns = [
+    path("", HealthView.as_view(), name="health"),
+]

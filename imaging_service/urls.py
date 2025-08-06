@@ -1,3 +1,5 @@
 from django.urls import include, path
 
-path("health/", include("health.urls")),
+urlpatterns = [
+    path("health/", include("imaging_service.health.urls")),
+]
