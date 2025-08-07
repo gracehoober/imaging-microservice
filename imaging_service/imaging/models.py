@@ -11,6 +11,5 @@ class Images(models.Model):
 
     id = models.UUIDField(null=False)
     url = models.URLField(null=False)
-    created_at = models.DateTimeField(null=False)
     modality = models.CharField(max_length=50, choices=MODALITY_CHOICES, blank=False)
     patient_id = models.UUIDField(null=False)

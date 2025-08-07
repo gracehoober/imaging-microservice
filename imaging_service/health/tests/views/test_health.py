@@ -13,5 +13,18 @@ class TestHealthView(TestCase):
         data = response.json()["data"]
         assert data == "Imaging Service App is healthy!"
 
+    def test_post_returns_valid_response(self):
+        response = self.client.post(self.url, data={"data": "Change this"})
+        assert response.status_code is status.HTTP_405_METHOD_NOT_ALLOWED
 
-# all other HTTP methods should return default message that not allowed
+    def test_put_returns_valid_response(self):
+        response = self.client.put(self.url, data={"data": "Change this"})
+        assert response.status_code is status.HTTP_405_METHOD_NOT_ALLOWED
+
+    def test_patch_returns_valid_response(self):
+        response = self.client.patch(self.url, data={"data": "Change this"})
+        assert response.status_code is status.HTTP_405_METHOD_NOT_ALLOWED
+
+    def test_delete_returns_valid_response(self):
+        response = self.client.delete(self.url, data={"data": "Change this"})
+        assert response.status_code is status.HTTP_405_METHOD_NOT_ALLOWED

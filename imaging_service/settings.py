@@ -127,3 +127,6 @@ STATIC_URL = "static/"
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+# AWS BUCKETS
+IMAGE_SERVICE_BUCKET = config("IMAGE_SERVICE_BUCKET")
